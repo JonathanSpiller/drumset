@@ -5,54 +5,51 @@
 }
 
 body {
-	background: url(../images/nainoa-shizuru-NcdG9mK3PBY-unsplash.jpg);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url(./images/nainoa-shizuru-NcdG9mK3PBY-unsplash.jpg);
 	background-attachment: fixed;
 	background-size: contain;
 	background-position: center;
 }
 
-.overlay{
-	position: absolute;
-	height: 100vh;
-	background-color: rgb(40,40,40,0.4);
+.container {
+	display: flex;
+	flex-wrap: wrap;
 }
 
-.container {
+.overlay {
 	position: absolute;
-	top: 10%;
-	left: 10%;
-
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-
-	width: 80vw;
-	height: 80vh;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.2);
 }
 
 .drum {
-	font-family: 'Roboto Mono', monospace;
-	width: 450px;
-	height: 450px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: transparent;
+	margin: 20px;
+	height: 100px;
+	width: 100px;
 	color: white;
 	border: 2px solid #ffcc02;
-	font-size: 8em;
-	background: rgba(0,0,0,0.7);
-	text-shadow: 0 0 .5rem black;
+	background: rgba(0,0,0,0.5);
+	z-index: 100;
+	font-family: 'Roboto Mono', monospace;
 }
 
 .drum kbd{
-	font-size: 1.4em;
+	font-size: 3em;
 }
 .drum span{
-	font-size: 0.7em;
-	padding: 0.2em;
 	color: #ffcc02;
+	font-size: 1em;
 }
 
 .drum:hover{
@@ -60,6 +57,7 @@ body {
 }
 
 .playing {
-	transform: scale(1.2);
-	border: 10px solid #ffcc02;
+	transform: scale(1.2) !important;  /*to override the scale from hover*/
+	border: 2px solid #ffcc02;
+	box-shadow: 0px 0px 20px 5px #ffcc02;
 }

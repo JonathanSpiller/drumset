@@ -1,7 +1,10 @@
+var allowed_keys = [65,83,68,70,71,72,74,75,76];
+
 window.addEventListener('keydown', function(event){
+    	var keyCode = event.keyCode;
+    	if (!allowed_keys.includes(keyCode)) return;
     	event.preventDefault();
     	event.stopPropagation();
-    	var keyCode = event.keyCode;
     	playAudio(keyCode)
 });
 
@@ -14,6 +17,7 @@ for (var i = 0; i < drums.length; i++) {
 }
 
 function playAudio(keyCode) { 
+	
 	var note = document.querySelector("audio[data-key='"+keyCode+"']");
 	var drum = document.querySelector(".drum[data-key='"+keyCode+"']");
 	note.currentTime = 0;  //Sets current position of playback to 0. So the sound restarts if its still playing.
